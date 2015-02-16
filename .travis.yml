@@ -1,0 +1,10 @@
+sudo: false
+language: node_js
+node_js: '0.10'
+script:
+- travis-lint .travis.yml
+- jscs . --esprima=esprima-fb
+- jsxhint . --exclude-path .jshintignore
+cache:
+  directories:
+  - node_modules

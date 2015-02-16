@@ -1,0 +1,43 @@
+{
+  "name": "todo-app-in-express",
+  "version": "0.0.1",
+  "description": "My optimally structured TodoApp",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/golmansax/todo-app-in-express.git"
+  },
+  "keywords": [
+    "todo"
+  ],
+  "author": "Holman Gao <holman@golmansax.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/golmansax/todo-app-in-express/issues"
+  },
+  "homepage": "https://github.com/golmansax/todo-app-in-express",
+  "devDependencies": {
+    "esprima-fb": "latest",
+    "jscs": "latest",
+    "jsxhint": "latest",
+    "travis-lint": "latest"
+  },
+  "dependencies": {
+    "browserify": "latest",
+    "connect-cachify-static": "latest",
+    "envify": "latest",
+    "express": "latest",
+    "express-handlebars": "latest",
+    "nib": "latest",
+    "node-jsx": "latest",
+    "react": "latest",
+    "reactify": "latest",
+    "stylus": "latest",
+    "uglify-js": "latest"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "start-dev": "nodemon -e js,jsx,hbs,json",
+    "watch": "make watch"
+  }
+}
