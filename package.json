@@ -23,6 +23,7 @@
     "travis-lint": "latest"
   },
   "dependencies": {
+    "bootstrap-styl": "latest",
     "browserify": "latest",
     "connect-cachify-static": "latest",
     "envify": "latest",

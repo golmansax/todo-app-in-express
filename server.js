@@ -3,6 +3,7 @@ var express = require('express');
 var expressHandlebars = require('express-handlebars');
 var routes = require('./routes');
 var cachifyStatic = require('connect-cachify-static');
+var bootstrapStyl = require('bootstrap-styl');
 
 var stylus;
 var nib;
@@ -32,7 +33,8 @@ module.exports = (function () {
       compile: function compile(str, path) {
         return stylus(str)
           .set('filename', path)
-          .use(nib());
+          .use(nib())
+          .use(bootstrapStyl());
       }
     }));
   }
