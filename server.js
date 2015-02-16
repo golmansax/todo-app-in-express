@@ -16,6 +16,7 @@ module.exports = (function () {
   'use strict';
 
   var server = express();
+  server.set('port', process.env.PORT || 3000);
 
   var hbs = expressHandlebars.create({
     extname: '.hbs'
@@ -42,8 +43,9 @@ module.exports = (function () {
   server.use(express.static(__dirname + '/public'));
 
   server.get('/', routes.index);
+  server.post('/', routes.index);
 
-  if (!module.parent) { server.listen(process.env.PORT || 3000); }
+  if (!module.parent) { server.listen(server.get('port')); }
 
   return server;
 })();

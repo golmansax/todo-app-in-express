@@ -31,8 +31,12 @@
     "express-handlebars": "latest",
     "nib": "latest",
     "node-jsx": "latest",
+    "pg": "latest",
+    "pg-hstore": "latest",
     "react": "latest",
     "reactify": "latest",
+    "sequelize": "latest",
+    "sqlite3": "latest",
     "stylus": "latest",
     "uglify-js": "latest"
   },
