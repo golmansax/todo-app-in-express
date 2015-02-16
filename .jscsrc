@@ -1,0 +1,19 @@
+{
+  "preset": "google",
+  "excludeFiles": ["node_modules/**", "vendor/**", "public/assets/**"],
+  "fileExtensions": [".js", ".jsx"],
+
+  "disallowTrailingComma": true,
+
+  "disallowMultipleVarDecl": "exceptUndefined",
+
+  "disallowSpacesInAnonymousFunctionExpression": null,
+
+  "disallowSpacesInsideObjectBrackets": null,
+
+  "requireSpacesInsideObjectBrackets": "allButNested",
+
+  "requireSpacesInAnonymousFunctionExpression": {
+    "beforeOpeningRoundBrace": true
+  }
+}
