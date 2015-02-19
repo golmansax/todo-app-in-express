@@ -3,7 +3,7 @@
 var React = require('react');
 var moment = require('moment');
 
-module.exports = React.createClass({
+var TodoListItem = React.createClass({
   propTypes: {
     name: React.PropTypes.string.isRequired,
     remove: React.PropTypes.func.isRequired,
@@ -57,5 +57,6 @@ module.exports = React.createClass({
       </li>
     );
   }
-
 });
+
+module.exports = TodoListItem;

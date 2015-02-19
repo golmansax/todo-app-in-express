@@ -3,7 +3,7 @@
 var React = require('react');
 var TodoListItem = require('./todo_list_item.jsx');
 
-module.exports = React.createClass({
+var TodoList = React.createClass({
   propTypes: {
     todos: React.PropTypes.array.isRequired,
     remove: React.PropTypes.func.isRequired
@@ -27,5 +27,6 @@ module.exports = React.createClass({
       </ul>
     );
   }
-
 });
+
+module.exports = TodoList;

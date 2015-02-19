@@ -4,7 +4,7 @@ var Backbone = require('backbone');
 var moment = require('moment');
 var _ = require('underscore');
 
-module.exports = Backbone.Model.extend({
+var Todo = Backbone.Model.extend({
   parse: function (data) {
     if (data.completed_date) {
       data.completed_date = moment(data.completed_date);
@@ -15,3 +15,5 @@ module.exports = Backbone.Model.extend({
     });
   }
 });
+
+module.exports = Todo;

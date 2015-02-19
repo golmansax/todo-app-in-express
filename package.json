@@ -31,6 +31,7 @@
     "envify": "latest",
     "express": "latest",
     "express-handlebars": "latest",
+    "flux": "latest",
     "moment": "latest",
     "nib": "latest",
     "node-jsx": "latest",
