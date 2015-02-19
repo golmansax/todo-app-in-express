@@ -1,3 +1,5 @@
+'use strict';
+
 var env = process.env.NODE_ENV || 'development';
 var express = require('express');
 var expressHandlebars = require('express-handlebars');
@@ -12,40 +14,36 @@ if (env === 'development') {
   nib = require('nib');
 }
 
-module.exports = (function () {
-  'use strict';
+var server = express();
+server.set('port', process.env.PORT || 3000);
 
-  var server = express();
-  server.set('port', process.env.PORT || 3000);
+var hbs = expressHandlebars.create({
+  extname: '.hbs'
+});
 
-  var hbs = expressHandlebars.create({
-    extname: '.hbs'
-  });
+server.use(cachifyStatic(__dirname + '/public'));
 
-  server.use(cachifyStatic(__dirname + '/public'));
+server.engine('hbs', hbs.engine);
+server.set('view engine', 'hbs');
 
-  server.engine('hbs', hbs.engine);
-  server.set('view engine', 'hbs');
+if (env === 'development') {
+  server.use(stylus.middleware({
+    src: __dirname + '/assets',
+    dest: __dirname + '/public/assets',
+    compile: function compile(str, path) {
+      return stylus(str)
+        .set('filename', path)
+        .use(nib())
+        .use(bootstrapStyl());
+    }
+  }));
+}
 
-  if (env === 'development') {
-    server.use(stylus.middleware({
-      src: __dirname + '/assets',
-      dest: __dirname + '/public/assets',
-      compile: function compile(str, path) {
-        return stylus(str)
-          .set('filename', path)
-          .use(nib())
-          .use(bootstrapStyl());
-      }
-    }));
-  }
+server.use(express.static(__dirname + '/public'));
 
-  server.use(express.static(__dirname + '/public'));
+server.get('/', routes.index);
+server.post('/', routes.index);
 
-  server.get('/', routes.index);
-  server.post('/', routes.index);
+if (!module.parent) { server.listen(server.get('port')); }
 
-  if (!module.parent) { server.listen(server.get('port')); }
-
-  return server;
-})();
+module.exports = server;

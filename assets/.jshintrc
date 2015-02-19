@@ -1,0 +1,9 @@
+{
+  "extends": "../.jshintrc",
+
+  "es3": true,
+
+  "globals": {
+    "window": true
+  }
+}
