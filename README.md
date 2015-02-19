@@ -1,1 +1,1 @@
-# optimal-todo-app
+# Todo App in Express + Flux
