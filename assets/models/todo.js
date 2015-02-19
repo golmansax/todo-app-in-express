@@ -6,12 +6,12 @@ var _ = require('underscore');
 
 var Todo = Backbone.Model.extend({
   parse: function (data) {
-    if (data.completed_date) {
-      data.completed_date = moment(data.completed_date);
+    if (data.completedDate) {
+      data.completedDate = moment(data.completedDate);
     }
 
     return _(data).extend({
-      due_date: moment(data.due_date)
+      dueDate: moment(data.dueDate)
     });
   }
 });

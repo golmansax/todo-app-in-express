@@ -11,22 +11,22 @@ var TodoListItem = React.createClass({
   },
 
   _markComplete: function () {
-    this.props.update({ completed_date: moment() });
+    this.props.update({ completedDate: moment() });
   },
 
   _renderDate: function () {
-    if (this.props.completed_date) {
+    if (this.props.completedDate) {
       return (
         <p>
           <strong>Completed date: </strong>
-          {this.props.completed_date.calendar()}
+          {this.props.completedDate.calendar()}
         </p>
       );
     } else {
       return (
         <p>
           <strong>Due date: </strong>
-          {this.props.due_date.calendar()}
+          {this.props.dueDate.calendar()}
         </p>
       );
     }
@@ -43,7 +43,7 @@ var TodoListItem = React.createClass({
           <button
             className='btn btn-lg btn-block btn-primary'
             onClick={this._markComplete}
-            disabled={!!this.props.completed_date}
+            disabled={!!this.props.completedDate}
           >
             Mark Done
           </button>

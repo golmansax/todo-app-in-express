@@ -7,11 +7,11 @@ var TodoCollection = require('../collections/todo_collection');
 var TodoApp = React.createClass({
   componentWillMount: function () {
     this._todos = new TodoCollection([
-      { name: 'Cut hair', due_date: '2015-03-04', id: 1 },
-      { name: 'Wash car', due_date: '2015-02-20', id: 2 },
-      { name: 'Laundry', due_date: '2015-02-19', id: 3 },
-      { name: 'Buy groceries', completed_date: '2015-02-10', id: 4 },
-      { name: 'Start a company', due_date: '2020-01-01', id: 5 }
+      { name: 'Cut hair', dueDate: '2015-03-04', id: 1 },
+      { name: 'Wash car', dueDate: '2015-02-20', id: 2 },
+      { name: 'Laundry', dueDate: '2015-02-19', id: 3 },
+      { name: 'Buy groceries', completedDate: '2015-02-10', id: 4 },
+      { name: 'Start a company', dueDate: '2020-01-01', id: 5 }
     ], { parse: true });
   },
 
