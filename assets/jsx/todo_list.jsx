@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react');
-var TodoListItem = require('./todo_list_item');
+var TodoListItem = require('./todo_list_item.jsx');
 
 module.exports = React.createClass({
   propTypes: {

@@ -1,11 +1,12 @@
 'use strict';
 
 var React = require('react');
-var TodoListContainer = require('todo_list_container');
+var TodoListContainer = require('./todo_list_container.jsx');
+var TodoCollection = require('../collections/todo_collection');
 
-module.exports = React.createClass({
+var TodoApp = React.createClass({
   componentWillMount: function () {
-    this._todos = new Chk.TodoCollection([
+    this._todos = new TodoCollection([
       { name: 'Cut hair', due_date: '2015-03-04', id: 1 },
       { name: 'Wash car', due_date: '2015-02-20', id: 2 },
       { name: 'Laundry', due_date: '2015-02-19', id: 3 },
@@ -33,3 +34,5 @@ module.exports = React.createClass({
     );
   }
 });
+
+module.exports = TodoApp;

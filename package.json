@@ -20,15 +20,18 @@
     "esprima-fb": "latest",
     "jscs": "latest",
     "jsxhint": "latest",
-    "travis-lint": "latest"
+    "travis-lint": "latest",
+    "watchify": "latest"
   },
   "dependencies": {
+    "backbone": "latest",
     "bootstrap-styl": "latest",
     "browserify": "latest",
     "connect-cachify-static": "latest",
     "envify": "latest",
     "express": "latest",
     "express-handlebars": "latest",
+    "moment": "latest",
     "nib": "latest",
     "node-jsx": "latest",
     "pg": "latest",
@@ -38,7 +41,8 @@
     "sequelize": "latest",
     "sqlite3": "latest",
     "stylus": "latest",
-    "uglify-js": "latest"
+    "uglify-js": "latest",
+    "underscore": "latest"
   },
   "scripts": {
     "start": "node server.js",
