@@ -11,12 +11,22 @@ BackboneStoreFactory.extend = Backbone.Collection.extend;
 var EVENTS = 'add remove change reset sort';
 
 _(BackboneStoreFactory.prototype).extend({
-  collection: Backbone.Collection,
+  collection: null,
+
+  model: Backbone.Model,
 
   _storage: null,
 
   initialize: function () {
-    this._storage = new this.collection();
+    // Prefer using this.collection over this.model
+    var Collection;
+    if (this.collection) {
+      Collection = this.collection;
+    } else {
+      Collection = Backbone.Collection.extend({ model: this.model });
+    }
+
+    this._storage = new Collection();
   },
 
   load: function (models) {
