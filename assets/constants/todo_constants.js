@@ -1,5 +1,8 @@
 'use strict';
 
-var TodoConstants = {};
+var keyMirror = require('keymirror');
+var TodoConstants = {
+  DESTROY: null
+};
 
 module.exports = TodoConstants;

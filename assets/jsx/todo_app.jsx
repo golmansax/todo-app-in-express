@@ -12,7 +12,14 @@ var TodoApp = React.createClass({
     };
   },
 
+  _onChange: function () {
+    this.setState({
+      todos: TodoStore.getAll()
+    });
+  },
+
   componentDidMount: function () {
+    TodoStore.addChangeListener(this._onChange);
     /*
     this._onTodosChange = this.forceUpdate.bind(this, null);
     this._todos.on('add remove change', this._onTodosChange);
@@ -29,7 +36,6 @@ var TodoApp = React.createClass({
     return (
       <TodoListContainer
         todos={this.state.todos}
-        remove={_.noop}
         update={_.noop}
       />
     );

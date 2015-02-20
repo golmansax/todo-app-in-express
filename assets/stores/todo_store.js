@@ -1,8 +1,10 @@
 'use strict';
 
 var moment = require('moment');
+var Dispatcher = require('../dispatcher');
 var BackboneStoreFactory = require('./backbone_store_factory');
 var TodoCollection = require('../collections/todo_collection');
+var TodoConstants = require('../constants/todo_constants');
 
 var TodoStoreFactory = BackboneStoreFactory.extend({
   collection: TodoCollection
@@ -15,5 +17,16 @@ TodoStore.load([
   { name: 'Buy groceries', completedDate: moment('2015-02-10'), id: 4 },
   { name: 'Start a company', dueDate: moment('2020-01-01'), id: 5 }
 ]);
+
+Dispatcher.register(function (action) {
+  switch (action.actionType) {
+    case TodoConstants.DESTROY:
+      TodoStore._storage.remove(action.id);
+      break;
+
+    default:
+      // no-op
+  }
+});
 
 module.exports = TodoStore;

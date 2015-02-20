@@ -2,16 +2,21 @@
 
 var React = require('react');
 var moment = require('moment');
+var TodoActions = require('../actions/todo_actions');
 
 var TodoListItem = React.createClass({
   propTypes: {
+    id: React.PropTypes.number.isRequired,
     name: React.PropTypes.string.isRequired,
-    remove: React.PropTypes.func.isRequired,
     update: React.PropTypes.func.isRequired
   },
 
   _markComplete: function () {
     this.props.update({ completedDate: moment() });
+  },
+
+  _onDestroyClick: function () {
+    TodoActions.destroy(this.props.id);
   },
 
   _renderDate: function () {
@@ -49,7 +54,7 @@ var TodoListItem = React.createClass({
           </button>
           <button
             className='btn btn-lg btn-block btn-default'
-            onClick={this.props.remove}
+            onClick={this._onDestroyClick}
           >
             Remove
           </button>
