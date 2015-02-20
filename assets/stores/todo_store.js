@@ -24,6 +24,10 @@ Dispatcher.register(function (action) {
       TodoStore._storage.remove(action.id);
       break;
 
+    case TodoConstants.UPDATE:
+      TodoStore._storage.get(action.id).set(action.data);
+      break;
+
     default:
       // no-op
   }

@@ -8,11 +8,10 @@ var TodoListItem = React.createClass({
   propTypes: {
     id: React.PropTypes.number.isRequired,
     name: React.PropTypes.string.isRequired,
-    update: React.PropTypes.func.isRequired
   },
 
-  _markComplete: function () {
-    this.props.update({ completedDate: moment() });
+  _onMarkCompleteClick: function () {
+    TodoActions.update(this.props.id, { completedDate: moment() });
   },
 
   _onDestroyClick: function () {
@@ -47,7 +46,7 @@ var TodoListItem = React.createClass({
         <div className='col-md-3'>
           <button
             className='btn btn-lg btn-block btn-primary'
-            onClick={this._markComplete}
+            onClick={this._onMarkCompleteClick}
             disabled={!!this.props.completedDate}
           >
             Mark Done

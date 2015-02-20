@@ -9,6 +9,14 @@ var TodoActions = {
       actionType: TodoConstants.DESTROY,
       id: id
     });
+  },
+
+  update: function (id, data) {
+    Dispatcher.dispatch({
+      actionType: TodoConstants.UPDATE,
+      id: id,
+      data: data
+    });
   }
 };
 

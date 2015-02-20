@@ -9,13 +9,7 @@ var TodoList = React.createClass({
   },
 
   _renderTodo: function (todo) {
-    return (
-      <TodoListItem
-        {...todo}
-        key={todo.id}
-        update={this.props.update.bind(this, todo.id)}
-      />
-    );
+    return <TodoListItem {...todo} key={todo.id} />;
   },
 
   render: function () {

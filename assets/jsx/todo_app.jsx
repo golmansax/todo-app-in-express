@@ -33,12 +33,7 @@ var TodoApp = React.createClass({
   },
 
   render: function () {
-    return (
-      <TodoListContainer
-        todos={this.state.todos}
-        update={_.noop}
-      />
-    );
+    return <TodoListContainer todos={this.state.todos} />;
   }
 });
 
