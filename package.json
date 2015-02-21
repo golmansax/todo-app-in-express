@@ -39,6 +39,7 @@
     "pg": "latest",
     "pg-hstore": "latest",
     "react": "latest",
+    "react-bootstrap": "latest",
     "reactify": "latest",
     "sequelize": "latest",
     "sqlite3": "latest",

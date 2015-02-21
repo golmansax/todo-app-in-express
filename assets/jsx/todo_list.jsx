@@ -2,6 +2,7 @@
 
 var React = require('react');
 var TodoListItem = require('./todo_list_item.jsx');
+var ListGroup = require('react-bootstrap').ListGroup;
 
 var TodoList = React.createClass({
   propTypes: {
@@ -14,9 +15,9 @@ var TodoList = React.createClass({
 
   render: function () {
     return (
-      <ul className='list-group'>
+      <ListGroup>
         {this.props.todos.map(this._renderTodo)}
-      </ul>
+      </ListGroup>
     );
   }
 });
