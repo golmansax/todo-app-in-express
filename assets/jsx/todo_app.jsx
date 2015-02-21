@@ -2,7 +2,8 @@
 
 var _ = require('underscore');
 var React = require('react');
-var TodoListContainer = require('./todo_list_container.jsx');
+var TodoList = require('./todo_list.jsx');
+var TodoOptionsMenu = require('./todo_options_menu.jsx');
 var TodoStore = require('../stores/todo_store');
 var BindToStoreMixin = require('../mixins/bind_to_store_mixin');
 
@@ -16,7 +17,13 @@ var TodoApp = React.createClass({
   },
 
   render: function () {
-    return <TodoListContainer todos={this.state.todos} />;
+    return (
+      <div>
+        <TodoOptionsMenu />
+        <br />
+        <TodoList todos={this.state.todos} />
+      </div>
+    );
   }
 });
 
