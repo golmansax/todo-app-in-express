@@ -6,7 +6,10 @@ var TodoStore = require('../stores/todo_store');
 
 var TodoListItem = React.createClass({
   propTypes: {
-    id: React.PropTypes.number.isRequired,
+    id: React.PropTypes.oneOfType([
+      React.PropTypes.number,
+      React.PropTypes.string
+    ]).isRequired,
     name: React.PropTypes.string.isRequired
   },
 

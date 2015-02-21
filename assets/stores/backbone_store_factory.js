@@ -53,6 +53,12 @@ _(BackboneStoreFactory.prototype).extend({
 
   create: function (data) {
     var model = new this.model(data);
+    var idAttr = model.idAttr || 'id';
+
+    if (!model.get(idAttr)) {
+      model.set(idAttr, model.cid);
+    }
+
     this._storage.add(model);
   },
 
