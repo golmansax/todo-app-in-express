@@ -22,6 +22,7 @@ _(BackboneStoreFactory.prototype).extend({
     var Collection;
     if (this.collection) {
       Collection = this.collection;
+      this.model = this.collection.model;
     } else {
       Collection = Backbone.Collection.extend({ model: this.model });
     }
@@ -48,6 +49,11 @@ _(BackboneStoreFactory.prototype).extend({
 
   destroy: function (id) {
     this._storage.remove(id);
+  },
+
+  create: function (data) {
+    var model = new this.model(data);
+    this._storage.add(model);
   },
 
   addChangeListener: function (callback) {
