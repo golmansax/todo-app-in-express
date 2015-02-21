@@ -5,7 +5,7 @@ var TodoListItem = require('./todo_list_item.jsx');
 
 var TodoList = React.createClass({
   propTypes: {
-    todos: React.PropTypes.array.isRequired,
+    todos: React.PropTypes.array.isRequired
   },
 
   _renderTodo: function (todo) {

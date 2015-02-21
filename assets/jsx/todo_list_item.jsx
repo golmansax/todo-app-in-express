@@ -7,7 +7,7 @@ var TodoStore = require('../stores/todo_store');
 var TodoListItem = React.createClass({
   propTypes: {
     id: React.PropTypes.number.isRequired,
-    name: React.PropTypes.string.isRequired,
+    name: React.PropTypes.string.isRequired
   },
 
   _onMarkCompleteClick: function () {
