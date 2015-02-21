@@ -42,7 +42,7 @@ if (env === 'development') {
 server.use(express.static(__dirname + '/public'));
 
 server.get('/', routes.index);
-server.post('/', routes.index);
+server.post('/todos', routes.index);
 
 if (!module.parent) { server.listen(server.get('port')); }
 

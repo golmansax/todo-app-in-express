@@ -42,6 +42,14 @@ _(BackboneStoreFactory.prototype).extend({
     return model.toJSON();
   },
 
+  update: function (id, data) {
+    this._storage.get(id).set(data);
+  },
+
+  destroy: function (id) {
+    this._storage.remove(id);
+  },
+
   addChangeListener: function (callback) {
     this._storage.on(EVENTS, callback);
   },

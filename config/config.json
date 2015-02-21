@@ -2,21 +2,21 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "todo_app_in_express_development",
+    "database": "todo_app_in_express_flux_development",
     "host": "127.0.0.1",
     "dialect": "sqlite"
   },
   "test": {
     "username": "root",
     "password": null,
-    "database": "todo_app_in_express_test",
+    "database": "todo_app_in_express_flux_test",
     "host": "127.0.0.1",
     "dialect": "sqlite"
   },
   "production": {
     "username": "root",
     "password": null,
-    "database": "todo_app_in_express_production",
+    "database": "todo_app_in_express_flux_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }

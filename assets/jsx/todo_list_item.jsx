@@ -2,7 +2,7 @@
 
 var React = require('react');
 var moment = require('moment');
-var TodoActions = require('../actions/todo_actions');
+var TodoStore = require('../stores/todo_store');
 
 var TodoListItem = React.createClass({
   propTypes: {
@@ -11,11 +11,11 @@ var TodoListItem = React.createClass({
   },
 
   _onMarkCompleteClick: function () {
-    TodoActions.update(this.props.id, { completedDate: moment() });
+    TodoStore.update(this.props.id, { completedDate: moment() });
   },
 
   _onDestroyClick: function () {
-    TodoActions.destroy(this.props.id);
+    TodoStore.destroy(this.props.id);
   },
 
   _renderDate: function () {
